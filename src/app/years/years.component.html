@@ -1,0 +1,23 @@
+
+    <h2>Year calculator</h2>
+    <form action="post">
+        <div class="form-group">
+            <label for="yearOfBirth" class="form-label">Please, intput the year of your birth.</label>
+            <input [(ngModel)]="yearsOfBirth" name="yearOfBirth" type="number" min="1900" max="3000"
+                class="form-control" ([ngModel])="yearsOfBirth"><br><br>
+        </div>
+        <div class="form-group">
+            <label for="calendarYear">Please, intput the calendar year.</label>
+
+            <input [(ngModel)]="calendarYear" name="calendarYear" type="number" min="1900" max="3000"
+                class="form-control" ([ngModel])="calendarYear">
+        </div><br><br>
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="onCalculateYears()">Calculate</button>
+            <label [(ngModel)]="!yearsResult" for="" [hidden]="!resultVisible" class="label-right">In {{calendarYear}}
+                You were: {{yearsResult}}
+                years old. </label>
+            <label [(ngModel)]="errorLabel" [hidden]="!errorLabel" for=""class="label-right">Please, input a correct data!</label>   
+        </div>
+
+    </form>
